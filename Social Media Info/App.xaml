@@ -1,0 +1,220 @@
+﻿<Application x:Class="Social_Media_Info.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Social_Media_Info"
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <Style x:Key="menuTitle" TargetType="TextBlock">
+            <Setter Property="Margin" Value="0 0 25 0"> </Setter>
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="Opacity" Value="0.7"> </Setter>
+            <Setter Property="Foreground" Value="#FFFFFF"> </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="1"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="menuButtonStyle" TargetType="fa:ImageAwesome">
+            <Setter Property="Width" Value="20"></Setter>
+            <Setter Property="Height" Value="20"> </Setter>
+            <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Button}}}"> </Setter>
+        </Style>
+
+        <Style x:Key="menuButtonText" TargetType="TextBlock">
+            <Setter Property="Margin" Value="0 7 0 0 "></Setter>
+        </Style>
+
+        <Style x:Key="menuButton" TargetType="Button">
+            <Setter Property="Margin" Value="0 7 0 0 "></Setter>
+            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="Width" Value="100"></Setter>
+            <Setter Property="Background" Value="Transparent"></Setter>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"> </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="15" Padding="15">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"> </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#AC0F0F"></Setter>
+                    <Setter Property="Foreground" Value="#FFFFFF"></Setter>
+                </Trigger>
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="#921C1B"></Setter>
+                    <Setter Property="Foreground" Value="#FFFFFF"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+
+
+        <Style x:Key="infoCard" TargetType="Border">
+            <Setter Property="Background" Value="#931B1B"> </Setter>
+            <Setter Property="CornerRadius" Value="15"></Setter>
+            <Setter Property="Padding" Value="10"> </Setter>
+            <Setter Property="Margin" Value="8 0 8 0"> </Setter>
+        </Style>
+
+
+        <Style x:Key="infoCardStack" TargetType="StackPanel">
+            <Setter Property="Margin" Value="20 0 0 0"> </Setter>
+            <Setter Property="VerticalAlignment" Value="Center"> </Setter>
+        </Style>
+
+
+        <Style x:Key="infoCardText" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#E9E9E9"></Setter>
+            <Setter Property="Opacity" Value="0.8"></Setter>
+        </Style>
+
+        <Style x:Key="infoCardTitle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#E9E9E9"></Setter>
+            <Setter Property="FontSize" Value="22"></Setter>
+            <Setter Property="Margin" Value="0 0 0 25"> </Setter>
+        </Style>
+
+        <Style x:Key="infoCardIcon" TargetType="fa:ImageAwesome">
+            <Setter Property="VerticalAlignment" Value="Center"> </Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"> </Setter>
+            <Setter Property="Margin" Value="0 0 20 0"> </Setter>
+            <Setter Property="Grid.Column" Value="1"></Setter>
+            <Setter Property="Width" Value="40"></Setter>
+            <Setter Property="Height" Value="40"> </Setter>
+            <Setter Property="Foreground" Value="#E0E0E0"> </Setter>
+            
+        </Style>
+
+
+        <Style x:Key="button" TargetType="Button">
+            <Setter Property="Height" Value="40"></Setter>
+            <Setter Property="Width" Value="170"> </Setter>
+            <Setter Property="Background" Value="Transparent"></Setter>
+            <Setter Property="Margin" Value="0 0 20 0"> </Setter>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"> </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="5" BorderThickness="1" BorderBrush="#202934" Padding="15 0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"> </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#202934"> </Setter>
+                    <Setter Property="Foreground" Value="#E9E9E9"> </Setter>
+                </Trigger>
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="Black"></Setter>
+                    <Setter Property="Foreground" Value="White"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+
+
+        <Style x:Key="buttonIcon" TargetType="fa:ImageAwesome">
+            <Setter Property="Width" Value="18"> </Setter>
+            <Setter Property="Height" Value="18"></Setter>
+            <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource= {RelativeSource AncestorType={x:Type Button}}}"></Setter>
+        </Style>
+
+
+        <Style x:Key="buttonText" TargetType="TextBlock">
+            <Setter Property="Margin" Value="10 0 0 0"> </Setter>
+            <Setter Property="FontSize" Value="14"> </Setter>
+        </Style>
+
+        <Style x:Key="iconBar" TargetType="fa:ImageAwesome">
+            <Setter Property="Foreground" Value="#787878"> </Setter>
+            <Setter Property="Width" Value="18"> </Setter>
+            <Setter Property="Height" Value="18"> </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="RenderTransform">
+                        <Setter.Value>
+                            <ScaleTransform ScaleX="1.1" ScaleY="1.1"> </ScaleTransform>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+
+        <Style x:Key="socialCard" TargetType="Border">
+            <Setter Property="Background" Value="#FDFDFD"/>
+            <Setter Property="CornerRadius" Value="15"> </Setter>
+            <Setter Property="Margin" Value="8 20 8 0" />
+            <Setter Property="BorderBrush" Value="#DBDBDB" />
+            <Setter Property="BorderThickness" Value="1" />
+        </Style>
+
+
+        <Style x:Key="socialCardIconBar" TargetType="fa:ImageAwesome" BasedOn="{StaticResource iconBar}">
+            <Setter Property="Margin" Value="0 15 20 15" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+        </Style>
+
+
+        <Style x:Key="socialCardStack" TargetType="StackPanel">
+            <Setter Property="Orientation" Value="Horizontal" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+
+        <Style x:Key="socilCardTitle" TargetType="fa:ImageAwesome">
+            <Setter Property="Width" Value="30" />
+            <Setter Property="Height" Value="30" />
+        </Style>
+
+        <Style x:Key="socialCardTitle" TargetType="TextBlock">
+            <Setter Property="Margin" Value="10 0 0 0" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+
+        <Style x:Key="socialCardCounterTitle" TargetType="TextBlock" >
+            <Setter Property="TextAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="48" />
+            <Setter Property="Margin" Value="0 50 0 5" />
+        </Style>
+
+        <Style x:Key="socialCardCounterText" TargetType="TextBlock">
+            <Setter Property="TextAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="#808080" />  
+        </Style>
+
+        <Style TargetType="Separator" >
+            <Setter Property="Background" Value="#c4c4c4"/>
+            <Setter Property="Margin" Value="0 60 0 15" />
+        </Style>
+
+        <Style x:Key="socialCardButtonTtitle" TargetType="TextBlock">
+            <Setter Property="TextAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="#808080" />
+        </Style>
+
+
+        <Style x:Key="socialCardButtonText" TargetType="TextBlock" >
+            <Setter Property="TextAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Margin" Value="0 5 0 0" />
+            <Setter Property="Foreground" Value="#474747" />
+        </Style>
+    </Application.Resources>
+</Application>

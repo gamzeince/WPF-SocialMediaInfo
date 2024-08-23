@@ -1,0 +1,333 @@
+﻿<Window x:Class="Social_Media_Info.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Social_Media_Info"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        
+        mc:Ignorable="d"
+        Height="730" Width="1280" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"> </ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!--background-->
+        <Grid Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.4*"> </RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions >
+
+            <Border CornerRadius="10 10 0 0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#B92120" Offset="0"></GradientStop>
+                        <GradientStop Color="#B81F1E" Offset="1"></GradientStop>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <Border Grid.Row="1" CornerRadius="0 0 10 10" Background="#EAEAEA"></Border>
+        </Grid>
+        <!--top menu-->
+            <Grid Grid.ColumnSpan="2" Grid.Row="0" Margin="50 30 50 40">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBlock Text="Analytics" Style="{StaticResource menuTitle}" Opacity="1"></TextBlock>
+                <TextBlock Text="Leadboard" Style="{StaticResource menuTitle}"></TextBlock>
+                <TextBlock Text="Realtime" Style="{StaticResource menuTitle}"></TextBlock>
+                <TextBlock Text="Trending" Style="{StaticResource menuTitle}"></TextBlock>
+                <TextBlock Text="Favorite" Style="{StaticResource menuTitle}"></TextBlock>
+            </StackPanel>
+
+           
+
+            
+        </Grid>
+        
+        <!--left menu-->
+        <Border Background="#FDFDFD" Grid.Row="1" BorderThickness="1" BorderBrush="#DBDBDB" Width="125" CornerRadius="15" Margin="50 0 50 40">
+            <StackPanel>
+                <Button Style="{StaticResource menuButton}" Margin="0 10 0 0" Background="#AC0F0F" Foreground="#FFFFFF">
+                    <StackPanel>
+                        <fa:ImageAwesome Icon="Home" Style="{StaticResource menuButtonStyle}"> </fa:ImageAwesome>
+                        <TextBlock Text="Dashboard" Style="{StaticResource menuButtonText}"></TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource menuButton}">
+                    <StackPanel>
+                        <fa:ImageAwesome Icon="Bookmark" Style="{StaticResource menuButtonStyle}"></fa:ImageAwesome>
+                        <TextBlock Text="Bookmarks" Style="{StaticResource menuButtonText}"></TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource menuButton}">
+                    <StackPanel>
+                        <fa:ImageAwesome Icon="Tags" Style="{StaticResource menuButtonStyle}"></fa:ImageAwesome>
+                        <TextBlock Text="Tags" Style="{StaticResource menuButtonText}"></TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource menuButton}">
+                    <StackPanel>
+                        <fa:ImageAwesome Icon="FileText" Style="{StaticResource menuButtonStyle}"></fa:ImageAwesome>
+                        <TextBlock Text="Posts" Style="{StaticResource menuButtonText}"></TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource menuButton}">
+                    <StackPanel>
+                        <fa:ImageAwesome Icon="Comments" Style="{StaticResource menuButtonStyle}"></fa:ImageAwesome>
+                        <TextBlock Text="Messages" Style="{StaticResource menuButtonText}"></TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource menuButton}">
+                    <StackPanel>
+                        <fa:ImageAwesome Icon="Cog" Style="{StaticResource menuButtonStyle}"></fa:ImageAwesome>
+                        <TextBlock Text="Settings" Style="{StaticResource menuButtonText}"></TextBlock>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Border>
+        
+        
+        <!--Main Panel-->
+        <StackPanel Grid.Column="1" Grid.Row="1" Margin="0 0 50 20" VerticalAlignment="Stretch">
+            <Grid Height="110" Margin="-8 0 -8 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"> </ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                
+                <!--info card-->
+                <Border Style="{StaticResource infoCard}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Style="{StaticResource infoCardStack}">
+                            <TextBlock Text="42, 500, 000" Style="{StaticResource infoCardTitle}"/>
+                            <TextBlock Text="Total View" Style="{StaticResource infoCardText}"/>
+                        </StackPanel>
+                        <fa:ImageAwesome Icon="Eye" Style="{StaticResource infoCardIcon}"/>
+                    </Grid>
+                </Border>
+
+
+
+                <!--info card-->
+                <Border Grid.Column="1" Style="{StaticResource infoCard}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Style="{StaticResource infoCardStack}">
+                            <TextBlock Text="42, 500, 000" Style="{StaticResource infoCardTitle}"/>
+                            <TextBlock Text="Total View" Style="{StaticResource infoCardText}"/>
+                        </StackPanel>
+                        <fa:ImageAwesome Icon="PieChart" Style="{StaticResource infoCardIcon}"/>
+                    </Grid>
+                </Border>
+
+
+                <!--info card-->
+                <Border Grid.Column="2" Style="{StaticResource infoCard}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Style="{StaticResource infoCardStack}">
+                            <TextBlock Text="42, 500, 000" Style="{StaticResource infoCardTitle}"/>
+                            <TextBlock Text="Total View" Style="{StaticResource infoCardText}"/>
+                        </StackPanel>
+                        <fa:ImageAwesome Icon="ThumbsUp" Style="{StaticResource infoCardIcon}"/>
+                    </Grid>
+                </Border>
+
+
+            </Grid>
+
+
+            <Border Background="#FDFDFD" Padding="15" Margin="0 20 0 0 " CornerRadius="15">
+                <Grid>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Border Width="60" Height="60" Margin="15 0 15 0" CornerRadius="30">
+                            <Border.Background>
+                                <ImageBrush Stretch="Fill" ImageSource="Images/cat.png"> </ImageBrush>
+                            </Border.Background>
+                        </Border>
+
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock Text="İZMİR" FontSize="16" Foreground="#8f8f8f"/>
+                            <TextBlock Text="i,love u" FontSize="13" Foreground="#8f8f8f"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 20 0">
+                        <Button Style="{StaticResource button}">
+                            <StackPanel Orientation="Horizontal">
+                                <fa:ImageAwesome Icon="BookmarkOutline" Style="{StaticResource buttonIcon}"/>
+                                <TextBlock Text="Save Profile" Style="{StaticResource buttonText}"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Button Style="{StaticResource button}" Background="#202934" Foreground="#e9e9e9">
+                            <StackPanel Orientation="Horizontal">
+                                <fa:ImageAwesome Icon="BookmarkOutline" Style="{StaticResource buttonIcon}"/>
+                                <TextBlock Text="Save Profile" Style="{StaticResource buttonText}"/>
+                            </StackPanel>
+                        </Button>
+
+                        <fa:ImageAwesome Icon="EllipsisV" Style="{StaticResource iconBar }">
+                        </fa:ImageAwesome>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Grid Margin="-8 0 -8 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+
+                <Border  Style="{StaticResource socialCard}">
+                    <StackPanel>
+                        <fa:ImageAwesome Icon="EllipsisH" Style="{StaticResource socialCardIconBar}"/>
+                        <StackPanel Style="{StaticResource socialCardStack}">
+                            <fa:ImageAwesome Icon="YoutubePlay" Foreground="Red" Style="{StaticResource socilCardTitle}"/>
+                            <TextBlock Text="YouTube" Style="{StaticResource socialCardTitle}"/>
+                        </StackPanel>
+
+                        <TextBlock Text="6.2m" Style="{StaticResource socialCardCounterTitle}" ></TextBlock>
+                        <TextBlock Text="Subscribers Count" Style="{StaticResource socialCardCounterText}" ></TextBlock>
+                        <Separator/>
+
+                        <Grid Margin="0 0 0 15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel>
+                                <TextBlock Text="Influence" Style="{StaticResource socialCardButtonTtitle}"/>
+                                <TextBlock Text="84%" Style="{StaticResource socialCardButtonText}"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="Engagement" Style="{StaticResource socialCardButtonTtitle}"/>
+                                <TextBlock Text="81%" Style="{StaticResource socialCardButtonText}"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="Affect" Style="{StaticResource socialCardButtonTtitle}"/>
+                                <TextBlock Text="63%" Style="{StaticResource socialCardButtonText}"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!--Social Card-->
+
+                <Border Grid.Column="1" Style="{StaticResource socialCard}">
+                    <StackPanel>
+                        <fa:ImageAwesome Icon="EllipsisH" Style="{StaticResource socialCardIconBar}"/>
+                        <StackPanel Style="{StaticResource socialCardStack}">
+                            <fa:ImageAwesome Icon="Instagram" Foreground="#512da8" Style="{StaticResource socilCardTitle}"/>
+                            <TextBlock Text="Instagram" Style="{StaticResource socialCardTitle}"/>
+                        </StackPanel>
+
+                        <TextBlock Text="1.8m" Style="{StaticResource socialCardCounterTitle}" ></TextBlock>
+                        <TextBlock Text="Followers Count" Style="{StaticResource socialCardCounterText}" ></TextBlock>
+                        <Separator/>
+
+                        <Grid Margin="0 0 0 15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel>
+                                <TextBlock Text="Influence" Style="{StaticResource socialCardButtonTtitle}"/>
+                                <TextBlock Text="87%" Style="{StaticResource socialCardButtonText}"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="Engagement" Style="{StaticResource socialCardButtonTtitle}"/>
+                                <TextBlock Text="80%" Style="{StaticResource socialCardButtonText}"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="Affect" Style="{StaticResource socialCardButtonTtitle}"/>
+                                <TextBlock Text="63%" Style="{StaticResource socialCardButtonText}"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+
+
+                <!--SOCİAL CARD-->
+                <Border Grid.Column="2" Style="{StaticResource socialCard}">
+                    <StackPanel>
+                        <fa:ImageAwesome Icon="EllipsisH" Style="{StaticResource socialCardIconBar}"/>
+                        <StackPanel Style="{StaticResource socialCardStack}">
+                            <fa:ImageAwesome Icon="FacebookSquare" Foreground="#512da8" Style="{StaticResource socilCardTitle}"/>
+                            <TextBlock Text="Facebook" Style="{StaticResource socialCardTitle}"/>
+                        </StackPanel>
+
+                        <TextBlock Text="2.2m" Style="{StaticResource socialCardCounterTitle}" ></TextBlock>
+                        <TextBlock Text="Followers Count" Style="{StaticResource socialCardCounterText}" ></TextBlock>
+                        <Separator/>
+
+                        <Grid Margin="0 0 0 15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel>
+                                <TextBlock Text="Influence" Style="{StaticResource socialCardButtonTtitle}"/>
+                                <TextBlock Text="94%" Foreground="#4caf50" Style="{StaticResource socialCardButtonText}"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="Engagement" Style="{StaticResource socialCardButtonTtitle}"/>
+                                <TextBlock Text="90%" Foreground="#4caf50" Style="{StaticResource socialCardButtonText}"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Text="Affect" Style="{StaticResource socialCardButtonTtitle}"/>
+                                <TextBlock Text="83%" Style="{StaticResource socialCardButtonText}"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </StackPanel>
+        
+    </Grid>
+</Window>
